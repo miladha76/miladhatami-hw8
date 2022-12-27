@@ -1,5 +1,6 @@
 from random import choice
 import re
+import json
 
 class Bank:
     colours = ['red','blue']
