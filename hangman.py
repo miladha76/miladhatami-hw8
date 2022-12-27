@@ -1,6 +1,8 @@
 from random import choice
 import re
 import json
+from typing import Match
+
 import requests
 class Bank:
     colours = ['red','blue']
@@ -57,7 +59,7 @@ class Processes:
         pass
 
     def validate_user_input(self, player):
-        expression=re.match('(?i)[a-a]',player.answer)
+        expression: Match[str] | None=re.match('(?i)[a-a]',player.answer)
         if expression is None or len(player.answer)>1:
             print('\nPlease guess a single alphabet')
         else:
